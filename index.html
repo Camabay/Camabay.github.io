@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NLP Proyect</title>
+    <title>NLP Project</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"rel="stylesheet">
 </head>
 <body>
-    <header style="background-color: #004a85;"
-        class="fixed inset-0 w-full flex flex-col justify-center justify-items-centercontent-center h-20">
-        <div class="self-center text-white">Distancia Coseno</div>
+    <header style="background-color: #004a85;">
+        <div style="text-align: center;color: aliceblue;">
+            Proyecto Paráfrasis<br>
+            Grupo de Ingeniería Lingüistica<br>
+            Instituto de Ingeniería UNAM
+        </div>
     </header>
 
     <section class="flex flex-wrap at-20w-full">
@@ -20,23 +23,23 @@
                 <textarea
                     style="background-color:#f2f2f2;
                     position: absolute; 
-                    top: 110px;left: 30px;width: 600px;height: 170px;border: 3px solid #00ade8;"
+                    top: 110px;left: 30px;width: 570px;height: 170px;border: 3px solid #00ade8;"
                     id="dat1"
                     class="w-11/12 md:h-3/4 m-2p-2border-green-600 rounded-1gp-2border self-center justify-center"
                     name="dat1"
-                    cols="30"rows="10"placeholder="Escribe tu texto"
+                    cols="30"rows="10"placeholder="Escribe tu primer texto a comparar"
                     required="required"
-                ></textarea> <input type="submit">
+                ></textarea>
                 <textarea
                     style="background-color:#f2f2f2;
                     position: absolute; 
-                    top: 290px;left: 30px;width: 600px;height: 170px;border: 3px solid #00ade8;"
+                    top: 290px;left: 30px;width: 570px;height: 170px;border: 3px solid #00ade8;"
                     id="dat2"
                     class="w-11/12 md:h-3/4 m-2p-2border-green-600 rounded-1gp-2border self-center justify-center"
                     name="dat2"
-                    cols="30"rows="10"placeholder="Escribe tu texto"
+                    cols="30"rows="10"placeholder="Escribe tu segundo texto a comparar"
                     required="required"
-                ></textarea> <input type="submit">
+                ></textarea>
                 <div class="flex sel-center">
 
                 </div>
@@ -52,7 +55,6 @@
                         font-size: 16px;
                         position: absolute; 
                         top: 490px;left: 30px;width: 100px;height: 40px;"
-                        class="m-1bg-green-500 hover:bg-blue-700 text-gray font-semi-bold py-2px-4rounded-lg"
                         type="submit"onclick="Check()">Submit</button>
                     <button
                         style="background-color: #004a85;
@@ -65,25 +67,31 @@
                         font-size: 16px;
                         position: absolute; 
                         top: 490px;left: 140px;width: 80px;height: 40px;"
-                        class="m-1bg-red-500 hover:bg-blue-700 text-black font-semi-bold py-2px-4rounded-lg"
                         type="reset">Clear</button>
+                    <input type="radio" id="coseno" name="algoritmo" value="Coseno" style="top:600px;left:290px;">
+                    <label for="coseno">Coseno</label>
+                    <input type="radio" id="jaccard" name="algoritmo" value="Jaccard" style="top:600px;left:290px;">
+                    <label for="jaccard"> Jaccard</label>
+                    <input type="radio" id="dice" name="algoritmo" value="Dice" style="top:600px;left:290px;">
+                    <label for="dice"> Dice</label>
+                    <input type="radio" id="levenshtein" name="algoritmo" value="Levenshtein" style="top:600px;left:290px;">
+                    <label for="levenshtein"> Levenshtein</label>
                 </div>
+                
             </form>
         </div>
         <div class="w-full md:w-1/2">
             <div class="mt-2flex flex-colw-full md:h-screen">
 
-                <textarea 
+                <p
                     style="background-color:#f2f2f2;
                     position: absolute; 
-                    top: 110px;right: 30px;width: 600px;height: 40px;border: 3px solid #00ade8;"
+                    top: 490px;left: 330px;width: 270px;height: 40px;"
                     id="dist"
-                    class="w-11/12 border-green-600 rounded-1gp-2border self-center justify-center md:h-3/4"
                     rows="10"
                     cols="30"name="result"
-                    readonly placeholder="Distancia">{{result}}</textarea>
-                    
-
+                    readonly placeholder="Distancia">{{result}}
+                </p>
             </div>
         </div>
     </section>
