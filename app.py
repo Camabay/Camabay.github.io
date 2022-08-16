@@ -6,7 +6,7 @@ from flask import request as req
 app = Flask(__name__)
 @app.route("/",methods=["GET","POST"])
 def Index():
-    return render_template("index.html")
+    return render_template("App.html")
 @app.route("/Distancia",methods=["GET","POST"])
 def Distancia():
     if req.method=="POST":
@@ -47,7 +47,7 @@ def Distancia():
 
     output=cosenoS(format(req.form['dat1']),format(req.form['dat2']))
 
-    return render_template("index.html",result=output)
+    return render_template("App.html",result=output)
 
 if __name__ == '__main__':
     app.debug=True
